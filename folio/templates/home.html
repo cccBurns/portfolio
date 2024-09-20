@@ -1,3 +1,7 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
 <h1>hola</h1>
 
 {% for project in projects %}
@@ -6,7 +10,12 @@
 <p> {{project.descripcion}} </p>
 <img src="{{project.imagen.url}}" alt="{{project.titulo}}">
 
-{% if project.url %}
+    {% if project.url %}
 <a href="{{project.url}}">{{project.url}}</a>
-{% endif %}
+    {% endif %}
+
 {% endfor %}
+
+{% endblock  %}
+
+
