@@ -2,20 +2,51 @@
 
 {% block content %}
 
-<h1>hola</h1>
+{% load static %}
 
-{% for project in projects %}
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/ccc.jpg' %}" alt="" style="max-height: 300px; width: auto;" >
+    </div>
 
-<h2> {{project.titulo}} </h2>
-<p> {{project.descripcion}} </p>
-<img src="{{project.imagen.url}}" alt="{{project.titulo}}">
+    <div class="col-md-8 my-auto">
+        <h1> <strong>Christian Burns</strong> </h1>
+        <h3>Programador Python / Django</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere sapiente alias modi vel harum dolore voluptates! Cumque recusandae, aliquam quisquam nisi nesciunt eligendi enim illum harum quibusdam minima illo.</p>
+        <a href="{% static 'portfolio/CV.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
+    </div>
 
-    {% if project.url %}
-<a href="{{project.url}}">{{project.url}}</a>
-    {% endif %}
+</header>
+
+<div class="row my-4 text-center">
+
+    <h3>My Projects</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure at illum, natus quidem aliquam atque quo. Animi tempora laboriosam enim. Maxime fugit facere ullam dolor fuga, libero consectetur et!</p>
+
+    {% for project in projects %}
+
+<div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+        <img src="{{project.imagen.url}}" alt="{{project.titulo}}" class="card-img-top">
+        <div class="card-body">
+
+            <h2> {{project.titulo}} </h2>
+            <p> {{project.descripcion}} </p>
+
+                {% if project.url %}
+            <a href="{{project.url}}" class="btn btn-light round-0 btn-sm" target="_blank">{{project.url}}</a>
+                {% endif %}
+
+        </div>
+    </div>
+</div>
 
 {% endfor %}
 
 {% endblock  %}
+</div>
+
+
+
 
 
