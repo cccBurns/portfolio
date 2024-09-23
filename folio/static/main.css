@@ -10,3 +10,7 @@ body {
     border: 1px solid #fff;
     cursor: pointer;
 }
+
+.btn-github {
+    width: 50px; 
+}
